@@ -14,6 +14,7 @@ export class SearchQueryComponent implements OnInit {
   queryResponse: any = [];
   selectedQuery: any;
   ngOnInit(): void {
+    this.loadQuery();
   }
 
   loadQuery() {
