@@ -22,7 +22,7 @@
             <p>
                 <mat-form-field appearance="outline">
                     <mat-label>{{'raisedQuery.Payment_Id' | translate}}</mat-label>
-                    <input matInput placeholder="{{'raisedQuery.Payment_Id' | translate}}"  [(ngModel)]="paymentQuery.paymentId"
+                    <input matInput placeholder="{{'raisedQuery.Payment_Id' | translate}}" [required]="true"  [(ngModel)]="paymentQuery.paymentId"
                         name="paymentId">
                 </mat-form-field>
             </p>
@@ -31,7 +31,7 @@
             <p>
                 <mat-form-field appearance="outline">
                     <mat-label>{{'raisedQuery.Payment_Date' | translate}}</mat-label>
-                    <input matInput placeholder="{{'raisedQuery.Payment_Date' | translate}}" [(ngModel)]="paymentQuery.paymentDate" type="date"
+                    <input matInput placeholder="{{'raisedQuery.Payment_Date' | translate}}"[required]="true"  [(ngModel)]="paymentQuery.paymentDate" type="date"
                     name="paymentDate">
                 </mat-form-field>
             </p>
@@ -40,7 +40,7 @@
             <p>
                 <mat-form-field appearance="outline">
                     <mat-label>{{'raisedQuery.Explanation' | translate}}</mat-label>
-                    <textarea matInput rows="3" [(ngModel)]="paymentQuery.explanation" name="explanation" placeholder="{{'raisedQuery.Explanation' | translate}}"></textarea>
+                    <textarea matInput rows="3" [(ngModel)]="paymentQuery.explanation"  [required]="true"  name="explanation" placeholder="{{'raisedQuery.Explanation' | translate}}"></textarea>
                 </mat-form-field>
             </p>
         </div>
@@ -56,7 +56,7 @@
         </p>
  </div>
     
-    
+
 <div class="col-12 col-md-4 col-lg-3">
     <p>
         <mat-form-field appearance="outline" class="w-100">
@@ -209,7 +209,7 @@
             <p>
                 <mat-form-field appearance="outline">
                     <mat-label>{{'raisedQuery.Select_Document' | translate}}</mat-label>
-                    <select matNativeControl [placeholder]="'Select'" [(ngModel)]="detailMismatchQuery.documentId" name="documentId">
+                    <select matNativeControl [placeholder]="'Select'" [(ngModel)]="detailMismatchQuery.documentId" name="documentId" >
                         <option value="Select">{{'common.Select' | translate}}</option>
                         <option value="01234"> Ankush Kumar s/o Bijendra Singh</option>
                         <option value="01235"> Vinay Kumar s/o Bijendra Singh</option>
@@ -248,14 +248,14 @@
             </p>
         </div>
 
-        <div class="col-12 col-md-4 col-lg-3">
+        <!-- <div class="col-12 col-md-4 col-lg-3">
             <p>
                 <mat-form-field appearance="outline">
                     <mat-label>{{'raisedQuery.Description' | translate}}</mat-label>
                     <textarea matInput placeholder="{{'raisedQuery.Description' | translate}}" [(ngModel)]="detailMismatchQuery.description" name="description"></textarea>
                 </mat-form-field>
             </p>
-        </div>
+        </div> -->
         <div class="col-12 col-md-4 col-lg-3">
             <p>
                 <mat-form-field appearance="outline" class="w-100">
