@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row shadow-lg">
+        <div class="col-12 d-block d-sm-block d-md-none text-center">
+            <h6>
+                <span class="h3" [innerHTML]="'header.title' | translate"> </span>
+            </h6>
+        </div>
+
+        <div class="col-12 text-info d-none d-sm-none d-md-block border-bottom border-top border-danger bg-light">
+            <div class="row">
+                <div class="col-12 border-bottom border-danger text-right text-warning"
+                    style="height: 20px; background-color: #0D4F89">
+
+                    <select class="float-end" [(ngModel)]="selectedLang" (change)="chnageLang($event.target)">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी</option>
+                    </select>
+                    <a href="#skip_to_main" title="Skip to main content" class="text-warning float-end">
+                        {{'header.SkipContent' | translate}} </a>
+                </div>
+            </div>
+
+            <!-- background image -->
+            <!-- <div class="row" style="background-image: url(../../../assets/images/ckh.png);"> -->
+            <div class="row">
+                <div class="col-1">
+                    <img class="" id="ctl00_Image2" src="../../../assets/images/logo.png" alt="e-Search"
+                        style="height:90px;width:90px;border-width:0px;">
+                </div>
+                <div class="col-10 text-dark text-center" style="font-weight: bolder;">
+                    <h2 style="font-size: 2.4vw" [className]="selectedLang=='en'?'mt-2':'mt-4'"
+                        [innerHTML]="'header.title' | translate">
+                    </h2>
+                </div>
+                <div class="col-1">
+                    <img id="ctl00_Image3" src="../../../assets/images/Spinning_Ashoka_Chakra.gif" alt="e-Search"
+                        style="height:90px;width:90px;border-width:0px;">
+                </div>
+            </div>
+            <div class="row border-top border-danger text-right text-white"
+                style="height: 20px; background-color: #0D4F89">
+
+                <div *hasRoles="[roles.GHOST]" class="col-1 pointer" (click)="editNotice();" matTooltip="Edit Notice">
+                    <fa-icon [icon]="faPencil"></fa-icon>
+                </div>
+
+                <div class="col-9">
+                    <marquee>
+                        <p class="font-italic" style="font-family:Cambria; font-size:12pt"><span id="ctl00_mstNotice"><b
+                                    style="color:Yellow; ">Notice: </b>As per SLA, Certified Copy will be delivered
+                                within 30 days ! || Online Appointment for DORIS-BBook (i.e Certified Copy,Inspection
+                                etc) available for all SR offices. || </span></p>
+                    </marquee>
+                </div>
+                <div class="col-2 pb-3">
+                    <p>
+                        <small><span id="time" name="time">{{nowTime}}</span></small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

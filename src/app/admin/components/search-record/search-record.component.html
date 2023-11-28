@@ -1,0 +1,406 @@
+<form action="" class="from-group" (submit)="onSubmit()">
+    <div class="row">
+        <div class="col-2">
+            <a data-bs-toggle="collapse" href="#softwareDetailsCollapse" role="button" aria-expanded="false"
+                aria-controls="softwareDetailsCollapse">
+                <p class="fw-bold"
+                    (click)="softwareDetailsCollapseIcon.icon = softwareDetailsCollapseIcon.icon === faAngleDown ? faAngleRight : faAngleDown">
+                    Software Details : <span>
+                        <fa-icon [icon]="softwareDetailsCollapseIcon.icon" #softwareDetailsCollapseIcon
+                            [icon]='faAngleDown'></fa-icon>
+                    </span>
+                </p>
+            </a>
+        </div>
+    </div>
+    <div class="row collapse show" id="softwareDetailsCollapse">
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>District</mat-label>
+                <mat-select [value]="'Select'" [required]="true">
+                    <mat-option value="Select">Select</mat-option>
+                    <mat-option value="two">Balod</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Sub-District</mat-label>
+                <mat-select [value]="'Select'" [required]="true">
+                    <mat-option value="Select">Select</mat-option>
+                    <mat-option value="two">Balod</mat-option>
+                    <mat-option value="Raipur">Raipur</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-2">
+            <a data-bs-toggle="collapse" href="#deedDetailsCollapse" role="button" aria-expanded="false"
+                aria-controls="deedDetailsCollapse">
+                <p class="fw-bold"
+                    (click)="deedDetailsCollapseIcon.icon = deedDetailsCollapseIcon.icon === faAngleDown ? faAngleRight : faAngleDown">
+                    Deed Details : <span>
+                        <fa-icon [icon]="deedDetailsCollapseIcon.icon" #deedDetailsCollapseIcon
+                            [icon]='faAngleDown'></fa-icon>
+                    </span>
+                </p>
+            </a>
+        </div>
+    </div>
+    <div class="row collapse show" id="deedDetailsCollapse">
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Volume No</mat-label>
+                <input matInput placeholder="Enter Volume No">
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Book No</mat-label>
+                <mat-select [value]="'all'" [required]="true">
+                    <mat-option value="all">All</mat-option>
+                    <mat-option value="ad1">AD-1</mat-option>
+                    <mat-option value="ad2">AD-2</mat-option>
+                    <mat-option value="ad3">AD-3</mat-option>
+
+                </mat-select>
+
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Document No</mat-label>
+                <input matInput placeholder="Enter Document No">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Date Of Registration</mat-label>
+                <input matInput placeholder="Enter Date Of Registration">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Document Type</mat-label>
+                <mat-select [value]="'Select'">
+                    <mat-option value="Select">Select</mat-option>
+                    <mat-option value="Sale Deed">Sale Deed</mat-option>
+                    <mat-option value="Lease">Lease</mat-option>
+                    <mat-option value="Transfer">Transfer</mat-option>
+
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Registration District</mat-label>
+                <input matInput placeholder="Enter Registration District">
+            </mat-form-field>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-2">
+            <a data-bs-toggle="collapse" href="#propertyDetailsCollapse" role="button" aria-expanded="false"
+                aria-controls="propertyDetailsCollapse">
+                <p class="fw-bold"
+                    (click)="propertyDetailsCollapseIcon.icon = propertyDetailsCollapseIcon.icon === faAngleDown ? faAngleRight : faAngleDown">
+                    Property Details : <span>
+                        <fa-icon [icon]="propertyDetailsCollapseIcon.icon" #propertyDetailsCollapseIcon
+                            [icon]='faAngleRight'></fa-icon>
+                    </span>
+                </p>
+            </a>
+        </div>
+    </div>
+
+    <div class="row collapse" id="propertyDetailsCollapse">
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Tehsil</mat-label>
+                <input matInput placeholder="Enter Tehsil">
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Area Type(NN/NP/NPP/Janpad):</mat-label>
+                <input matInput placeholder="Enter Area Type">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Village Name</mat-label>
+                <input matInput placeholder="Enter Village Name">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Village Name (Hindi)</mat-label>
+                <input matInput placeholder="Enter Village Name (Hindi)">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Ward Name</mat-label>
+                <input matInput placeholder="Enter Ward Name">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Ward Name (Hindi)</mat-label>
+                <input matInput placeholder="Enter Ward Name (Hindi)">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Area Name</mat-label>
+                <input matInput placeholder="Enter Area Name">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>House No./Plot No./Flat No</mat-label>
+                <input matInput placeholder="Enter House No./Plot No./Flat No">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Ward/Halka No</mat-label>
+                <input matInput placeholder="Enter Ward/Halka No">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Village Code</mat-label>
+                <input matInput placeholder="Enter Village Code">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Khasra No</mat-label>
+                <input matInput placeholder="Enter Khasra No">
+            </mat-form-field>
+        </div>
+    </div>
+    <hr>
+
+    <!-- party 1 details -->
+    <div class="row">
+        <div class="col-2">
+            <a data-bs-toggle="collapse" href="#party1DetailsCollapse" role="button" aria-expanded="false"
+                aria-controls="party1DetailsCollapse">
+                <p class="fw-bold"
+                    (click)="party1DetailsCollapseIcon.icon = party1DetailsCollapseIcon.icon === faAngleDown ? faAngleRight : faAngleDown">
+                    Party 1 Details: <span>
+                        <fa-icon [icon]="party1DetailsCollapseIcon.icon" #party1DetailsCollapseIcon
+                            [icon]='faAngleRight'></fa-icon>
+                    </span>
+                </p>
+            </a>
+        </div>
+    </div>
+
+    <div class="row collapse" id="party1DetailsCollapse">
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Party Type</mat-label>
+                <input matInput placeholder="Enter Party Type">
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Party Name</mat-label>
+                <input matInput placeholder="Enter Party Name">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Party Name (Hindi)</mat-label>
+                <input matInput placeholder="Enter Party Name (Hindi)">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Relative Name</mat-label>
+                <input matInput placeholder="Enter Relative Name">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Relative Name (Hindi)</mat-label>
+                <input matInput placeholder="Enter Relative Name (Hindi)">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Pan/Form 60,61/Aadhar</mat-label>
+                <input matInput placeholder="Enter Pan/Form 60,61/Aadhar">
+            </mat-form-field>
+        </div>
+    </div>
+    <hr>
+
+    <!-- party 2 details -->
+    <div class="row">
+        <div class="col-2">
+            <a data-bs-toggle="collapse" href="#party2DetailsCollapse" role="button" aria-expanded="false"
+                aria-controls="party2DetailsCollapse">
+                <p class="fw-bold"
+                    (click)="party2DetailsCollapseIcon.icon = party2DetailsCollapseIcon.icon === faAngleDown ? faAngleRight : faAngleDown">
+                    Party 2 Details: <span>
+                        <fa-icon [icon]="party2DetailsCollapseIcon.icon" #party2DetailsCollapseIcon
+                            [icon]='faAngleRight'></fa-icon>
+                    </span>
+                </p>
+            </a>
+        </div>
+    </div>
+
+    <div class="row collapse" id="party2DetailsCollapse">
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Party Type</mat-label>
+                <input matInput placeholder="Enter Party Type">
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Party Name</mat-label>
+                <input matInput placeholder="Enter Party Name">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Party Name (Hindi)</mat-label>
+                <input matInput placeholder="Enter Party Name (Hindi)">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Relative Name</mat-label>
+                <input matInput placeholder="Enter Relative Name">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Relative Name (Hindi)</mat-label>
+                <input matInput placeholder="Enter Relative Name (Hindi)">
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Pan/Form 60,61/Aadhar</mat-label>
+                <input matInput placeholder="Enter Pan/Form 60,61/Aadhar">
+            </mat-form-field>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col text-center">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>
+
+<section *ngIf="recordList.length>0">
+    <div class="table-responsive">
+        <table class="table" mat-table [dataSource]="recordList">
+
+            <!-- volumeNo Column -->
+            <ng-container matColumnDef="VolumeNo" sticky>
+                <th mat-header-cell *matHeaderCellDef> Volume No </th>
+                <td mat-cell *matCellDef="let element"> {{element.VolumeNo}} </td>
+            </ng-container>
+
+            <!-- BookNo Column -->
+            <ng-container matColumnDef="BookNo" sticky>
+                <th mat-header-cell *matHeaderCellDef> Book No </th>
+                <td mat-cell *matCellDef="let element"> {{element.BookNo}} </td>
+            </ng-container>
+
+            <!-- DocumentNo Column -->
+            <ng-container matColumnDef="DocumentNo" sticky>
+                <th mat-header-cell *matHeaderCellDef> Document No </th>
+                <td mat-cell *matCellDef="let element"> {{element.DocumentNo}} </td>
+            </ng-container>
+
+            <!-- DateOfRegistration Column -->
+            <ng-container matColumnDef="DateOfRegistration" sticky>
+                <th mat-header-cell *matHeaderCellDef> Date Of Registration </th>
+                <td mat-cell *matCellDef="let element"> {{element.DateOfRegistration}} </td>
+            </ng-container>
+
+            <!-- DocumentType Column -->
+            <ng-container matColumnDef="DocumentType" sticky>
+                <th mat-header-cell *matHeaderCellDef> Document Type </th>
+                <td mat-cell *matCellDef="let element"> {{element.DocumentType}} </td>
+            </ng-container>
+
+            <!-- PartyName1 Column -->
+            <ng-container matColumnDef="PartyName1" sticky>
+                <th mat-header-cell *matHeaderCellDef> Owner Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.PartyName1}} </td>
+            </ng-container>
+
+            <!-- PartyName1Hindi Column -->
+            <ng-container matColumnDef="PartyName1Hindi" sticky>
+                <th mat-header-cell *matHeaderCellDef> Owner Name(Hindi) </th>
+                <td mat-cell *matCellDef="let element"> {{element.PartyName1Hindi}} </td>
+            </ng-container>
+
+            <!-- RelativeName1 -->
+            <ng-container matColumnDef="RelativeName1" sticky>
+                <th mat-header-cell *matHeaderCellDef> Relative Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.RelativeName1}} </td>
+            </ng-container>
+
+            <!-- RelativeName1 hindi-->
+            <ng-container matColumnDef="RelativeName1Hindi" sticky>
+                <th mat-header-cell *matHeaderCellDef>Relative Name(Hindi) </th>
+                <td mat-cell *matCellDef="let element"> {{element.RelativeName1Hindi}} </td>
+            </ng-container>
+
+            <!-- Action Column -->
+            <ng-container matColumnDef="Action" stickyEnd>
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                            <mat-icon>visibility</mat-icon>
+                            <span>Full Details</span>
+                        </button>
+
+                        <button mat-menu-item>
+                            <mat-icon>share</mat-icon>
+                            <span>Share Link</span>
+                        </button>
+
+                        <button mat-menu-item>
+                            <mat-icon>payment</mat-icon>
+                            <span>Share Link with Payment</span>
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>download</mat-icon>
+                            <span>Download</span>
+                        </button>
+
+
+                    </mat-menu>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</section>

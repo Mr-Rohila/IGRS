@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-12 col-md-6 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'byOwnerName.Select_District' | translate}} :</mat-label>
+                <select matNativeControl [placeholder]="'Select'" [(ngModel)]="selectedDistrictId" name="district"
+                    (change)="onDistrictChange()">
+                    <option value="Select"> {{'common.Select' | translate}}</option>
+                    <option *ngFor="let d of districtList" [value]="d.id">
+                        {{userLang=='hi'?d.hindi:d.english}}</option>
+                </select>
+            </mat-form-field>
+        </p>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'byOwnerName.Select_Tehsil' | translate}} :</mat-label>
+                <select matNativeControl [placeholder]="'Select'" [(ngModel)]="selectedTehsilId" name="tehsil">
+                    <option value="Select"> {{'common.Select' | translate}}</option>
+                    <option *ngFor="let tehsil of tehsilList" [value]="tehsil.id">
+                        {{userLang=='hi'?tehsil.hindi:tehsil.english}}</option>
+                </select>
+            </mat-form-field>
+        </p>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'byOwnerName.Select_Village' | translate}} :</mat-label>
+                <select matNativeControl [placeholder]="'Select'" [(ngModel)]="selectedVillageId" name="village">
+                    <option value="Select"> {{'common.Select' | translate}}</option>
+                    <option *ngFor="let village of villageList" [value]="village.id">
+                        {{userLang=='hi'?village.hindi:village.english}}</option>
+                </select>
+            </mat-form-field>
+        </p>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'byOwnerName.Registration_Year' | translate}} :</mat-label>
+                <select matNativeControl [placeholder]="'Select'" [(ngModel)]="selectedYearId" name="registrationYear">
+                    <option value="Select"> {{'common.Select' | translate}}</option>
+                    <option *ngFor="let year of registrationYearList" [value]="year.sno">
+                        {{year.year}}</option>
+                </select>
+            </mat-form-field>
+        </p>
+    </div>
+</div>
+<!--  form row end -->
+<div class="row">
+    <div class="col-12 text-center">
+        <button class="btn btn-primary" (click)="searchDeed()">{{'common.Search' | translate}}</button>
+    </div>
+</div>
+

@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "type": "Payment Refund",
+        "userComment": "My Payment is failed but deducted my account please refund it",
+        "initDate": "05-11-2023",
+        "solvedDate": "",
+        "status": "Pending",
+        "contactInfo": "8958019324",
+        "verifierComment": "",
+        "attachedScreenshots": "aa",
+        "attachedFileId":"",
+        "district":"Raipur",
+        "subDistrict":"Raipur",
+        "paymentId":"PYTM014789522"
+    },
+    {
+        "id": 2,
+        "type": "Data Entry Wrong",
+        "userComment": "My deed data is wrong, please fix my data as soon as possible, in portal my name is ANKUSH but my actual name is Ankush Rohilla Rajput",
+        "initDate": "05-11-2023",
+        "solvedDate": "",
+        "status": "Pending",
+        "contactInfo": "8958019324",
+        "verifierComment": "",
+        "attachedScreenshots": "aa",
+        "attachedFileId":"104RA147",
+        "district":"Raipur",
+        "subDistrict":"Raipur",
+        "paymentId":""
+    }
+]

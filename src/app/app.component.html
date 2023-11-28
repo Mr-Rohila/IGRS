@@ -1,0 +1,10 @@
+<app-header></app-header>
+
+<!-- router for navbar -->
+<app-navbar [isShowMenu]="showNavbar" *ngIf="showNavbar"></app-navbar>
+<!-- dynamic components -->
+<mat-card class="bg-light">
+    <router-outlet></router-outlet>
+</mat-card>
+
+<app-footer></app-footer>

@@ -1,0 +1,125 @@
+<div class="card">
+    <h1 class="card-header text-center fw-bold">{{'signup.registerForm' | translate}} </h1>
+    <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <div class="form-row my-2">
+                        <label>{{'signup.mobileNo' | translate}}</label>
+                        <div class="col-12 input-group">
+                            <input type="number" formControlName="mobileNo" class="form-control"
+                                [readOnly]="isOTPValidate"
+                                [ngClass]="{ 'is-invalid': submitted && form.mobileNo.errors, 'is-valid':isOTPValidate}" />
+
+                            <div *ngIf="submitted && form.mobileNo.errors" class="invalid-feedback">
+                                <div *ngIf="form.mobileNo.errors.required">{{'signup.mobileErrorMessage1' | translate}}
+                                </div>
+                                <div *ngIf="form.mobileNo.errors.min || form.mobileNo.errors.max">
+                                    {{'signup.mobileErrorMessage2'
+                                    | translate}}
+                                </div>
+                            </div>
+
+                            <!-- Button trigger for OTP verification modal -->
+                            <button *ngIf="!isOTPValidate" type="button" (click)="onSendOTP()"
+                                class="btn btn-sm btn-primary m-2">
+                                {{'signup.sendOTPButtonLabel' | translate}}
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-row my-2">
+                        <label>{{'signup.email' | translate}}</label>
+                        <div class="col-12 input-group">
+
+                            <input type="text" formControlName="email" class="form-control"
+                                [ngClass]="form.email.errors?'is-invalid':'is-valid'" />
+                            <div *ngIf="form.email.errors" class="invalid-feedback">
+                                <div *ngIf="form.email.errors.required">{{'signup.emailErrorMessage1' | translate}}
+                                </div>
+                                <div *ngIf="form.email.errors.email">{{'signup.emailErrorMessage2' | translate}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row my-2">
+                        <label>{{'signup.password' | translate}}</label>
+                        <div class="col-12 input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text " style="cursor: pointer;"
+                                    (click)="password.type=='text'?password.type='password':password.type='text'"><fa-icon
+                                        [icon]="password.type=='password' ? faEye:faEyeSlash"></fa-icon></span>
+                            </div>
+                            <input type="password" #password formControlName="password" class="form-control"
+                                [ngClass]="form.password.errors?'is-invalid':'is-valid'" />
+
+                            <div *ngIf="form.password.errors" class="invalid-feedback">
+                                <div *ngIf="form.password.errors.required">{{'signup.passwordErrorMessage1' |
+                                    translate}}</div>
+                                <div *ngIf="form.password.errors.pattern">{{'signup.passwordErrorMessage2' | translate}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row my-2">
+                            <label>{{'signup.confirmPassword' | translate}}</label>
+                            <div class="col-12 input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text " style="cursor: pointer;"
+                                        (click)="confirmPassword.type=='text'?confirmPassword.type='password':confirmPassword.type='text'"><fa-icon
+                                            [icon]="confirmPassword.type=='password' ? faEye:faEyeSlash"></fa-icon></span>
+                                </div>
+                                <input type="password" #confirmPassword formControlName="confirmPassword"
+                                    class="form-control"
+                                    [ngClass]="form.confirmPassword.errors?'is-invalid':'is-valid'" />
+                                <div *ngIf="form.confirmPassword.errors" class="invalid-feedback">
+                                    <div *ngIf="form.confirmPassword.errors.required">
+                                        {{'signup.confirmPasswordErrorMessage1' |
+                                        translate}}</div>
+                                    <div *ngIf="form.confirmPassword.errors.mustMatch">
+                                        {{'signup.confirmPasswordErrorMessage2' |
+                                        translate}}</div>
+                                    <div *ngIf="form.confirmPassword.errors.pattern">{{'signup.passwordErrorMessage2' |
+                                        translate}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-check my-2">
+                        <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input"
+                            [ngClass]="form.acceptTerms.errors?'is-invalid':'is-valid'" />
+
+                        <label for="acceptTerms" class="form-check-label"> <a href="#"> {{'signup.TsCs' | translate}}
+                            </a></label>
+                        <div *ngIf="submitted && form.acceptTerms.errors" class="invalid-feedback">
+                            {{'signup.TsCsErrorMessage1'
+                            | translate}}
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-primary mr-1" [disabled]="!isOTPValidate">{{'signup.registerButtonLabel'
+                            |
+                            translate}}</button>
+                        <!-- <button class="btn btn-primary mr-1">{{'signup.registerButtonLabel'
+                            |
+                            translate}}</button> -->
+                        <button class="btn btn-danger mx-2" type="reset" (click)="onReset()">{{'signup.resetButtonLabel'
+                            |
+                            translate}}</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+        <div class="w-100 my-3 border border-dark"></div>
+        <div class="row m-2">
+            <div class="col-12">
+                <p>Have an Account! <a routerLink="/auth/login">Login</a></p>
+            </div>
+        </div>
+    </div>
+</div>

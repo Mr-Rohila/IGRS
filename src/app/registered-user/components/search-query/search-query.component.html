@@ -1,0 +1,101 @@
+<div class="col-12 text-center">
+    <p class="h3 fw-bold">{{'searchQuery.Complaint_Information' | translate}}</p>
+</div>
+
+<div class="m-3">
+    <form class="form-group" name="searchQueryForm" (ngSubmit)="onSubmit()" #searchQueryForm="ngForm">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'searchQuery.Complaint_Id' | translate}}</mat-label>
+                <input matInput required="true" [(ngModel)]="queryId" name="queryId">
+            </mat-form-field>
+        </p>
+        <input type="submit" value="Search" class="btn btn-primary">
+    </form>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Sno</th>
+                <th scope="col">Complaint Id</th>
+                <th scope="col">Complaint Type</th>
+                <th scope="col">Initial date</th>
+                <th scope="col">Last update date</th>
+                <th scope="col">Current Status</th>
+                <th scope="col">Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>QRA140920230001</td>
+                <td>Document Details Missmatch</td>
+                <td>14-09-2023</td>
+                <td>18-09-2023</td>
+                <td>Pending</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td>QRA140920230001</td>
+                <td>Payment Refund</td>
+                <td>14-09-2023</td>
+                <td>18-09-2023</td>
+                <td>Pending</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td>QRA140920230001</td>
+                <td>Other</td>
+                <td>14-09-2023</td>
+                <td>18-09-2023</td>
+                <td>Pending</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="card mt-2">
+    <div class="text-center text-aline-center h3">******{{'searchQuery.Complaint_Status' | translate}}******</div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Complaint Id</td>
+                    <td>{{queryResponse.id}}</td>
+                </tr>
+                <tr>
+                    <td>Complaint Type</td>
+                    <td>{{queryResponse.type}}</td>
+                </tr>
+                <tr>
+                    <td>Initial date</td>
+                    <td>{{queryResponse.initDate}}</td>
+                </tr>
+                <tr>
+                    <td>Last update date</td>
+                    <td>{{queryResponse.updateDate}}</td>
+                </tr>
+                <tr>
+                    <td>Current Status</td>
+                    <td scope="col" class="text-danger fw-bold">{{queryResponse.ststus}}</td>
+                </tr>
+                <tr>
+                    <td>Comment</td>
+                    <td>{{queryResponse.comment}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

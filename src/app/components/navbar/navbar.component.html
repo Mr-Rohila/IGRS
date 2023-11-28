@@ -1,0 +1,48 @@
+<div class="m-2 navbg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-lite-blue">
+        <div class="container-fluid">
+            <!-- <a href="#" class="navbar-brand">Brand</a> -->
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <!-- dynamic menu -->
+                    <div *ngFor="let menu of menuArray">
+
+                        <!-- for single menu -->
+                        <a [routerLink]="menu.url" class="nav-item nav-link"
+                            [text]="selectedLang=='hi'?menu.labelHi:menu.labelEn"></a>
+
+                        <!-- for multiple menu --drop down -->
+                        <!-- <div *ngIf="menu.child?.length!=0" class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                [text]="selectedLang=='hi'?menu.labelHi:menu.labelEn"></a>
+                            <div class="dropdown-menu">
+                                <a *ngFor="let child of menu.child" [routerLink]="child.url" class="dropdown-item"
+                                    [text]="selectedLang=='hi'?child.labelHi:child.labelEn"></a>
+                            </div>
+                        </div> -->
+                    </div>
+                    <!-- dynamic menu end -->
+
+                    <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Messages</a>
+                        <div class="dropdown-menu">
+                            <a routerLink="/inbox" class="dropdown-item">Inbox</a>
+                            <a routerLink="/sent" class="dropdown-item">Sent</a>
+                            <a href="#" class="dropdown-item">Drafts</a>
+                        </div>
+                    </div> -->
+                    <a routerLink="/other" class="nav-item nav-link" tabindex="-1">All Services</a>
+                    <!-- <a routerLink="home/login" class="nav-item nav-link" tabindex="-1">Login</a> -->
+
+                </div>
+                <!-- <div class="navbar-nav ms-auto">
+                    <a href="#" class="nav-item nav-link">Login</a>
+                </div> -->
+            </div>
+        </div>
+    </nav>
+</div>

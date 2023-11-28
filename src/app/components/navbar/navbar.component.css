@@ -1,0 +1,10 @@
+.navbg{
+    background-color: #d7dbdf;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+a:hover{
+    background-color: #7d8d9c;
+}

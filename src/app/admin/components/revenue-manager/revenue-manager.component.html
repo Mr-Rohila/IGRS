@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-12 text-center">
+        <p class="h3">Revenue Dashboard</p>
+    </div>
+</div>
+
+<ng-container>
+    <div class="card card-body">
+        <div class="row">
+            <div class="col-12">
+                <div id="monthlyRevenueChart" class="w-100" style="height: 300px;"></div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container>
+    <div class="row my-2">
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <p class="h4">Weekly Revenue <span class="float-end pointer"
+                            matTooltip="Export into CSV"><mat-icon>download</mat-icon> </span></p>
+                    <p class="text-muted">Total Revenue : <span class="text-success">8000 ₹ </span> </p>
+                </div>
+                <div class="card-body">
+                    <div class="w-100" id="weeklyRevenueChart" style="height: 250px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <p class="h4">Overview <span class="float-end pointer"
+                            matTooltip="Export into CSV"><mat-icon>download</mat-icon> </span></p>
+                    <p class="text-muted">Total Revenue : <span class="text-success">8000 ₹ </span> </p>
+                </div>
+                <div class="card-body">
+                    <div class="w-100" id="overviewRevenueChart" style="height: 250px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ng-container>

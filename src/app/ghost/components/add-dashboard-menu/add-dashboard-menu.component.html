@@ -1,0 +1,72 @@
+<form class="form-group">
+    <div class="card">
+        <h1 class="card-header text-center">Menu Form</h1>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-6">
+                    <label for="menuName" class="form-label">Menu Name:</label>
+                    <input name="menuName" id="menuName" class="form-control" placeholder="Name">
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <label for="menuNameHindi" class="form-label">Menu Hindi Name:</label>
+                    <input name="menuNameHindi" id="menuNameHindi" class="form-control" placeholder="Hindi name">
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <label for="menuURL" class="form-label">Menu URL</label>
+                    <input name="menuURL" id="menuURL" class="form-control" placeholder="URL"
+                        [disabled]="childMenuArray.length!=0">
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-3">
+                    <label for="roleBy" class="form-label">Access By:</label>
+                    <select name="roleBy" class="form-control" multiple="true">
+                        <option value="">Select</option>
+                        <option value="GHOST">GHOST</option>
+                        <option value="SUPERADMIN">SUPERADMIN</option>
+                        <option value="ADMIN">ADMIN</option>
+                        <option value="REGISTERED">REGISTERED</option>
+                        <option value="GUEST">GUEST</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- child menu -->
+            <div *ngIf="childMenuArray?.length" class="card my-4">
+                <h1 class="card-header text-center">Child Information</h1>
+                <div class="card-body">
+                    <div *ngFor="let childMenu of childMenuArray; let i=index" class="row">
+                        <div class="col-lg-3 col-md-4 col-6">
+
+                            <label class="form-label">Child Name:</label>
+                            <input [name]="'childMenu_'+i" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <label for="menuNameHindi" class="form-label">Child Hindi Name:</label>
+                            <input [name]="'childMenuHindi_'+i" class="form-control" placeholder="Hindi name">
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <label for="menuURL" class="form-label">Menu URL</label>
+                            <input [name]="'childMenuURL_'+i" class="form-control" placeholder="URL">
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <label for="roleBy" class="form-label">Access By:</label>
+                            <select [name]="'childMenuRole_'+i" class="form-control" multiple="true">
+                                <option value="">Select</option>
+                                <option value="GHOST">GHOST</option>
+                                <option value="SUPERADMIN">SUPERADMIN</option>
+                                <option value="ADMIN">ADMIN</option>
+                                <option value="REGISTERED">REGISTERED</option>
+                                <option value="GUEST">GUEST</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a class="btn btn-danger pointer" (click)="addChild()">Add Child</a>
+            <input type="submit" class="m-3 btn btn-primary pointer" value="Save">
+        </div>
+    </div>
+</form>

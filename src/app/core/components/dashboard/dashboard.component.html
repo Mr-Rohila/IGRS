@@ -1,0 +1,31 @@
+<ng-container class="container">
+    <div *hasRoles="[roles.GHOST]" class="row">
+        <a routerLink="/user/ghost/add-menu" class="col-12 h3 text-primary pointer"> <fa-icon [icon]="faAdd"></fa-icon>
+            Add new card</a>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-4 arrow-card" *ngFor="let menu of menuData">
+            <!-- dynamic card -->
+            <div class="card my-2" >
+                <div class="card-body text-center text-success ">
+                    <p class="h4">
+                        <a [routerLink]="menu.url" class="text-success"> {{userLang=='en'?
+                            menu.labelEn:menu.labelHi}}</a>
+                    </p>
+                    <p class="h6"> click to proceed </p>
+                </div>
+                <div class="card-body" *hasRoles="[roles.GHOST]">
+                    <span class="card-link text-danger pointer"
+                        [matTooltip]="menu.isActive ? 'Disable Card':'Enable Card'" matTooltip="Disable Card">
+                        Status: <mat-slide-toggle [(ngModel)]="menu.isActive"
+                            (change)="disableCard(menu)"></mat-slide-toggle>
+                    </span>
+                    <a class="card-link text-success pointer" matTooltip="Edit card"> <fa-icon
+                            [icon]="faPencil"></fa-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

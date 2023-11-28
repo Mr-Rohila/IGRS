@@ -1,0 +1,110 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 d-none d-md-block">
+            <section class="card">
+
+                <div class="card-header text-center h4">
+                    Other Link's
+                    <button *hasRoles="[roles.GHOST]" class="mx-2 text-success" mat-icon-button (click)="addLink()"
+                        matTooltip="Add new link">
+                        <fa-icon [icon]="faAdd"></fa-icon>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <!-- dynamic list -->
+                    <ul>
+                        <li>Visit for <a href="https://google.com" target="_blank">Google</a>
+                            <button *hasRoles="[roles.GHOST]" class="mx-2" mat-icon-button color="warn"
+                                (click)="deleteLink('10')" matTooltip="Delete Link">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </li>
+                        <li>Visit for <a href="https://edistrict.cgstate.gov.in/" target="_blank">E-District</a>
+
+                            <button *hasRoles="[roles.GHOST]" class="mx-2" mat-icon-button color="warn"
+                                (click)="deleteLink('10')" matTooltip="Delete Link">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </li>
+                        <li>Visit for <a href="https://www.sarkariresult.com/" target="_blank">Sarkari Result</a>
+
+                            <button *hasRoles="[roles.GHOST]" class="mx-2" mat-icon-button color="warn"
+                                (click)="deleteLink('10')" matTooltip="Delete Link">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </li>
+                        <li>Visit for <a href="https://www.nvsp.in/" target="_blank">Voters Portal</a> <button
+                                *hasRoles="[roles.GHOST]" class="mx-2" mat-icon-button color="warn"
+                                (click)="deleteLink('10')" matTooltip="Delete Link">
+                                <mat-icon>delete</mat-icon>
+                            </button> </li>
+                        <li>Visit for <a href="https://gmail.com" target="_blank">Gmail</a> <button class="mx-2"
+                                *hasRoles="[roles.GHOST]" mat-icon-button color="warn" (click)="deleteLink('10')"
+                                matTooltip="Delete Link">
+                                <mat-icon>delete</mat-icon>
+                            </button></li>
+                        <li>Visit for <a href="https://youtube.com" target="_blank">Youtube</a> <button class="mx-2"
+                                *hasRoles="[roles.GHOST]" mat-icon-button color="warn" (click)="deleteLink('10')"
+                                matTooltip="Delete Link">
+                                <mat-icon>delete</mat-icon>
+                            </button></li>
+                        <li>Visit for <a href="https://translate.google.com" target="_blank">Google-Translate</a>
+                            <button *hasRoles="[roles.GHOST]" class="mx-2" mat-icon-button color="warn"
+                                (click)="deleteLink('10')" matTooltip="Delete Link">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- <div class="card-footer text-muted">
+                        2 days ago
+                    </div> -->
+            </section>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6">
+            <section class="card">
+
+                <div class="card-header text-center h4">
+                    Under Leadership
+                </div>
+
+                <div class="card-body">
+                    <!-- dynamic list -->
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <img src="../../../../assets/images/CM.jpg" class="img-fluid" alt="image of cm">
+                            <h3>Bhupesh Baghel, CM of CG</h3>
+                            <p class="pointer" *hasRoles="[roles.GHOST]" (click)="chnageFirstPic()"
+                                matTooltip="Chnage Pic"> <fa-icon [icon]="faPencil"></fa-icon>
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <img src="../../../../assets/images/CM-1.png" class="img-fluid" alt="image">
+                            <h3>श्री जयसिंह अग्रवाल मंत्री, वाणिज्य कर (पंजीयन) विभाग</h3>
+                            <p class="pointer" *hasRoles="[roles.GHOST]" (click)="chnageSecondPic()"
+                                matTooltip="Chnage Pic"> <fa-icon [icon]="faPencil"></fa-icon>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-12 col-md-12 col-lg-3">
+            <section class="card">
+                <div class="card-header text-center h4">
+                    Civil Services
+                </div>
+
+                <div class="card-body">
+                    <ul>
+                        <li>Search Deed <a routerLink="/user/register/create-new-request">click</a> </li>
+                        <li>Download Copy of Deed <a routerLink="/user/register/show-request-list">click</a> </li>
+                        <li>Correction Request <a routerLink="/user/register/query">click</a></li>
+                        <li>Register Complaint For Mismatch Data <a routerLink="/user/register/query">click</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

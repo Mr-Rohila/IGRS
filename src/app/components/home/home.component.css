@@ -1,0 +1,9 @@
+.card-body ul li {
+    font-size: large;
+    font-weight: bold;
+    margin: 7%;
+}
+
+button {
+    margin: -7%;
+}

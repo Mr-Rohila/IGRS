@@ -1,0 +1,34 @@
+[
+    {
+        "mobileNo": "8958019324",
+        "email": "neel1@gmail.com",
+        "password": "1234",
+        "roles": [
+            "REGISTERED"
+        ]
+    },
+    {
+        "mobileNo": "8171215067",
+        "email": "neel2@gmail.com",
+        "password": "1234",
+        "roles": [
+            "ADMIN"
+        ]
+    },
+    {
+        "mobileNo": "1234567890",
+        "email": "neel2@gmail.com",
+        "password": "1234",
+        "roles": [
+            "SUPERADMIN"
+        ]
+    },
+    {
+        "mobileNo": "9876543210",
+        "email": "neel2@gmail.com",
+        "password": "1234",
+        "roles": [
+            "QCUser"
+        ]
+    }
+]

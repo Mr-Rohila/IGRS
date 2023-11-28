@@ -1,0 +1,116 @@
+{
+    "common": {
+        "Select": "चुनें",
+        "Search": "खोज"
+    },
+    "home": {
+        "title": "बहु भाषा समर्थन अनुप्रयोग हिंदी कॉन्फ़िगरेशन में आपका स्वागत है"
+    },
+    "header": {
+        "title": "<b class='text-primary'>म</b>हानिरीक्षक <b class='text-primary'>पं</b>जीयन एवं <b class='text-primary'>अ</b>धीक्षक <b class='text-primary'>मु</b>द्रांक<br>",
+        "SkipContent": "मुख्य विषयवस्तु पर जाएं"
+    },
+    "navbar": {
+        "home": "होम"
+    },
+    "signup": {
+        "registerForm": "रजिस्टर फॉर्म",
+        "name": "नाम",
+        "mobileNo": "मोबाइल नंबर",
+        "mobileErrorMessage1": "मोबाइल नंबर आवश्यक",
+        "mobileErrorMessage2": "अमान्य मोबाइल नंबर",
+        "email": "ईमेल",
+        "emailErrorMessage1": "ईमेल आवश्यक",
+        "emailErrorMessage2": "ईमेल एक वैध ईमेल होना चाहिए",
+        "password": "पासवर्ड",
+        "passwordErrorMessage1": "पासवर्ड आवश्यक",
+        "passwordErrorMessage2": "पासवर्ड में 8 से अधिक अक्षर, 1 बड़ा  अक्षर(अंग्रजी में), 1 छोटा अक्षर(अंग्रेजी में) और 1 विशेष अक्षर होना चाहिए",
+        "confirmPassword": "पासवर्ड पुष्टि",
+        "confirmPasswordErrorMessage1": "पुष्टि पासवर्ड आवश्यक",
+        "confirmPasswordErrorMessage2": "पुष्टि पासवर्ड, पासवर्ड से मेल खाना चाहिए",
+        "TsCs": "नियम एवं शर्तें स्वीकार करें",
+        "TsCsErrorMessage1": "Ts & Cs को स्वीकार करना आवश्यक है",
+        "registerButtonLabel": "रजिस्टर करे",
+        "resetButtonLabel": "साफ करें",
+        "sendOTPButtonLabel": "OTP भेजें"
+    },
+    "forgetPassword": {
+        "mailNotificationMessage": "अपना मेलबॉक्स खोलें और रीसेट पासवर्ड लिंक जांचें/खोलें"
+    },
+    "createPassword": {
+        "password": "पासवर्ड",
+        "passwordErrorMessage1": "पासवर्ड आवश्यक",
+        "passwordErrorMessage2": "पासवर्ड में 8 से अधिक अक्षर, 1 बड़ा  अक्षर(अंग्रजी में), 1 छोटा अक्षर(अंग्रेजी में) और 1 विशेष अक्षर होना चाहिए",
+        "confirmPassword": "पासवर्ड पुष्टि",
+        "confirmPasswordErrorMessage1": "पुष्टि पासवर्ड आवश्यक",
+        "confirmPasswordErrorMessage2": "पुष्टि पासवर्ड, पासवर्ड से मेल खाना चाहिए",
+        "createButtonLabel": "पासवर्ड बनाएं",
+        "resetButtonLabel": "साफ करें",
+        "titleLabel": "नया पासवर्ड बनाएं"
+    },
+    "searchDeed": {
+        "Select_Search_Type": "खोज प्रकार चुनें",
+        "By Owner Name": "मालिक के नाम से",
+        "By Khasra No": "खसरा नं से",
+        "By Registration Year": "पंजीकरण वर्ष से",
+        "Advanced Search": "Advanced Search",
+        "Name_of_deed_owner": "विलेख स्वामी का नाम",
+        "Relative_Name": "रिश्तेदार का नाम",
+        "Khasra_No": "खसरा नं.",
+        "Village_Name": "गाँव का नाम",
+        "Document_Type": "दस्तावेज़ का प्रकार",
+        "Document_Report": "दस्तावेज़ रिपोर्ट",
+        "Request_of_full_Report": "पूर्ण विलेख रिपोर्ट का अनुरोध करें"
+    },
+    "byOwnerName": {
+        "Select_District": "जिला चुनें",
+        "Select_Tehsil": "तहसील चुनें",
+        "Select_Village": "गांव चुनें",
+        "Registration_Year": "पंजीकरण वर्ष"
+    },
+    "byKhasraNo": {
+        "Select_District": "जिला चुनें",
+        "Enter_Khasra": "खसरा नंबर लिखे"
+    },
+    "byRegistrationYear": {
+        "Select_District": "जिला चुनें",
+        "Registration_Year": "पंजीकरण वर्ष"
+    },
+    "advanceForm": {
+        "Select_District": "जिला चुनें",
+        "SR_Location": "सब रजिस्ट्रार",
+        "Registration_District": "पंजीकरण जिला",
+        "Select_Tehsil": "तहसील चुनें",
+        "Select_Village": "गांव चुनें"
+    },
+    "query": {
+        "Search_Complaint": "शिकायत खोजें",
+        "Raised_Complaint": "शिकायत करें"
+    },
+    "raisedQuery": {
+        "Raised_Complaint": "शिकायत करें",
+        "Select_Complaint_Type": "शिकायत का प्रकार चुनें",
+        "Payment_Id": "भुगतान आईडी",
+        "Payment_Date": "भुगतान तिथि",
+        "Explanation": "स्पष्टीकरण",
+        "Submit": "सबमिट",
+        "Select_District": "जिला चुनें",
+        "Village_Name": "गाँव का नाम",
+        "Owner_Name": "स्वामी का नाम",
+        "Owner_Relative_Name": "स्वामी संबंधी नाम",
+        "Other_Details_related_document": "दस्तावेज़ संबंधित अन्य विवरण",
+        "Please_provide_correct_details_of_the_relevant_document_which_will_assist_in_identification_of_your_document": "कृपया संबंधित दस्तावेज़ का सही विवरण प्रदान करें जो आपके दस्तावेज़ की पहचान में सहायता करेगा",
+        "Select_Document": "दस्तावेज़ चुनें",
+        "Mobile_No":"मोबाइल फोन नंबर",
+        "Address":"घर का पता",
+        "Contact_Person_Name":"संपर्क व्यक्ति का नाम",
+        "Father_Name":"पिता का नाम",
+        "Description":"विवरण"
+    },
+    "searchQuery": {
+        "Complaint_Information": "शिकायत की जानकारी",
+        "Complaint_Id": "शिकायत क्रमांक",
+        "Complaint_Status": "शिकायत की स्थिति"
+    }
+    
+}

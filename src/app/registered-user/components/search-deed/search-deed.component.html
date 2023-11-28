@@ -1,0 +1,137 @@
+<h2> {{'searchDeed.Select_Search_Type' | translate}} :</h2>
+
+<div class="row">
+    <mat-radio-group aria-label="Select an option" name="searchTypeGroup" (change)="onSearchTypeChange()"
+        [(ngModel)]="searchType">
+        <mat-radio-button class="col-12 col-sm-6 col-md-4 col-lg-3 m2" [value]="'By Owner Name'"
+            [checked]="true">{{'searchDeed.By Owner Name' |
+            translate}}</mat-radio-button>
+
+        <mat-radio-button class="col-12 col-sm-6 col-md-4 col-lg-3 m2" value="By Khasra No">{{'searchDeed.By Khasra No'
+            | translate}}</mat-radio-button>
+
+        <mat-radio-button class="col-12 col-sm-6 col-md-4 col-lg-3 m2" value="By Registration Year">
+            {{'searchDeed.By Registration Year' | translate}}</mat-radio-button>
+
+        <mat-radio-button class="col-12 col-sm-6 col-md-4 col-lg-3 m2" value="Advanced Search">
+            {{'searchDeed.Advanced Search' | translate}}</mat-radio-button>
+    </mat-radio-group>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header text-center h4">{{'searchDeed.'+searchType | translate }}</div>
+    <div class="card-body">
+        <form class="form-group">
+
+            <app-by-owner-name *ngIf="searchType=='By Owner Name'"
+                (ownerList)='loadOwnerList($event)'></app-by-owner-name>
+
+            <app-by-khasra-no *ngIf="searchType=='By Khasra No'" (ownerList)='loadOwnerList($event)'></app-by-khasra-no>
+
+            <app-by-registration-year *ngIf="searchType=='By Registration Year'"
+                (ownerList)='loadOwnerList($event)'></app-by-registration-year>
+
+            <app-advance-form *ngIf="searchType=='Advanced Search'"
+                (ownerList)='loadOwnerList($event)'></app-advance-form>
+
+            <div *ngIf="ownerNameList.length>0" class="row m-2">
+                <div class="col-12">
+                    <p>
+                        <mat-form-field appearance="outline" class="form-control">
+                            <mat-label>Select Owner Name :</mat-label>
+                            <select matNativeControl [placeholder]="'Select'" name="ownerName"
+                                [(ngModel)]="selectedFileId" multiple class="h3" (change)="onOwnerNameChange($event)">">
+                                <option *ngFor="let owner of ownerNameList" [value]="owner.fileid">
+                                    {{userLang=='hi'?owner.hindi: owner.english}}</option>
+                            </select>
+                        </mat-form-field>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="card mt-2" *ngIf="selectedFileId && selectedDeedInformation">
+    <div class="text-center h4">******Basic Details******</div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{'searchDeed.Name_of_deed_owner' | translate}}</td>
+                    <td>{{selectedDeedInformation.ownerName}}</td>
+                </tr>
+                <tr>
+                    <td>{{'searchDeed.Relative_Name' | translate}}</td>
+                    <td>{{selectedDeedInformation.relativeName}}</td>
+                </tr>
+                <tr>
+                    <td>{{"searchDeed.Khasra_No" | translate}}</td>
+                    <td>{{selectedDeedInformation.khasraNo}}</td>
+                </tr>
+                <tr>
+                    <td>{{"searchDeed.Village_Name" | translate}}</td>
+                    <td>{{selectedDeedInformation.villageName}}</td>
+                </tr>
+                <tr>
+                    <td>{{"searchDeed.Document_Type" | translate}}</td>
+                    <td>{{selectedDeedInformation.documentType}}</td>
+                </tr>
+                <tr>
+                    <td>{{"searchDeed.Document_Report" | translate}}</td>
+                    <td (click)="previewDeed()"> <a matTooltip="view deed" class="pointer">click</a> </td>
+                </tr>
+                <tr>
+                    <td>{{"searchDeed.Request_of_full_Report" | translate}}</td>
+                    <td (click)="paymentDetails()"> <a matTooltip="pay for it" class="pointer">Pay Now</a> Charges
+                        applicable*</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="mt-2" id="paymentDetails" *ngIf="paymentInitSuccess">
+    <div class="text-center h4">******Payment Information******</div>
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Document Owner Name</td>
+                    <td>{{selectedDeedInformation.ownerName}}</td>
+                </tr>
+                <tr>
+                    <td>Amount </td>
+                    <td>200 Rs</td>
+                </tr>
+                <!-- <tr>
+                    <td>Payment Id</td>
+                    <td>123456</td>
+                </tr>
+                <tr>
+                    <td>Order Id</td>
+                    <td>1245787923</td>
+                </tr> -->
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button class="btn btn-primary" matTooltip="pay now" (click)="paymentInit()">Pay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<iframe id="ifram" *ngIf="dataLocalUrl" width="100%" height="700px" [attr.src]="dataLocalUrl"
+    type="application/pdf"></iframe>

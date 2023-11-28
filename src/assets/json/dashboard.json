@@ -1,0 +1,71 @@
+[
+    {
+        "labelEn": "Deed",
+        "labelHi": "विलेख",
+        "url": "/user/register/create-new-request",
+        "isActive": true,
+        "roles": [
+            "REGISTERED"
+        ]
+    },
+    {
+        "labelEn": "Downloads",
+        "labelHi": "डाउनलोड",
+        "url": "/user/register/show-request-list",
+        "isActive": true,
+        "roles": [
+            "REGISTERED"
+        ]
+    },
+    {
+        "labelEn": "Complain",
+        "labelHi": "शिकायत",
+        "url": "/user/register/query",
+        "isActive": true,
+        "roles": [
+            "REGISTERED"
+        ]
+    },
+    {
+        "labelEn": "Revenue Dashboard",
+        "labelHi": "राजस्व डैशबोर्ड",
+        "url": "/user/admin/revenue-manager",
+        "isActive": true,
+        "roles": [
+            "ADMIN",
+            "SUPERADMIN",
+            "GHOST"
+        ]
+    },
+    {
+        "labelEn": "Users Dashboard",
+        "labelHi": "यूजर्स डैशबोर्ड",
+        "url": "/user/admin/user-manager",
+        "isActive": true,
+        "roles": [
+            "ADMIN",
+            "SUPERADMIN",
+            "GHOST"
+        ]
+    },
+    {
+        "labelEn": "Search Record Dashboard",
+        "labelHi": "रिकॉर्ड खोजें डैशबोर्ड",
+        "url": "/user/admin/search-record",
+        "isActive": true,
+        "roles": [
+            "ADMIN",
+            "SUPERADMIN",
+            "GHOST"
+        ]
+    },
+    {
+        "labelEn": "Complain Dashboard",
+        "labelHi": "शिकायत डैशबोर्ड",
+        "url": "/user/admin/query",
+        "isActive": true,
+        "roles": [
+            "QCUser"
+        ]
+    }
+]

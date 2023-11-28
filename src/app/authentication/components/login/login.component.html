@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-12">
+        <div class="container card">
+            <div class="row my-3 text-center">
+                <div class="col-12">
+                    <h1 class="fw-bold"><fa-icon [icon]="faLock"></fa-icon> Login</h1>
+                </div>
+            </div>
+            <div class="w-100 my-3 border"></div>
+
+            <div class="row mx-2" *ngIf="errorMessage">
+                <div class="col-12 text-center alert alert-danger" role="alert">{{errorMessage}}</div>
+            </div>
+
+
+            <div class="row m-3">
+                <div class="col-12 input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <fa-icon [icon]="faUser"></fa-icon> </span>
+                    </div>
+                    <input type="text" name="username" #usernameId [(ngModel)]="username" class="form-control"
+                        placeholder="username or mobileNo" />
+                </div>
+            </div>
+
+            <div class="row m-3">
+                <div class="col-12 input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text " style="cursor: pointer;"
+                            (click)="passwordId.type=='text'?passwordId.type='password':passwordId.type='text'"><fa-icon
+                                [icon]="passwordId.type=='password' ? faEye:faEyeSlash"></fa-icon></span>
+                    </div>
+                    <input type="password" #passwordId name="password" [(ngModel)]="password" [autocomplete]="false"
+                        [autocapitalize]="false" class="form-control" placeholder="password" />
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-12 checkbox">
+                    <label><input type="checkbox" value="true" /> Remember me</label>
+                </div>
+            </div>
+
+            <!-- this is use for testing purpose -->
+            <!-- <div class="row">
+                <div class="col-12">
+                    Login As
+                    <select [(ngModel)]="selectedRole">
+                        <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+                    </select>
+                </div>
+            </div> -->
+
+
+            <div class="row m-2">
+                <div class="col-12 text-center">
+                    <button (click)="onSubmit()" type="submit" class="btn btn-success"><span
+                            class="glyphicon glyphicon-off"></span>
+                        Login</button>
+                    <button type="reset" (click)="onReset()" class="btn btn-danger m-3"><span
+                            class="glyphicon glyphicon-off"></span>
+                        Reset</button>
+                </div>
+            </div>
+            <div class="w-100 my-3 border border-dark"></div>
+            <div class="row m-2">
+                <div class="col-12">
+                    <p>Don't have an Account! <a routerLink="/auth/register">Sign Up Here</a></p>
+                    <p>Forgot <a routerLink="/auth/reset-password">Password?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

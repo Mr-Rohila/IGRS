@@ -1,0 +1,111 @@
+<div class="row">
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'advanceForm.Select_District' | translate}} :</mat-label>
+                <select matNativeControl [placeholder]="'Select'" [(ngModel)]="selectedDistrictId" name="district"
+                    (change)="districtChangeEvent($event)">
+                    <option value="Select">Select</option>
+                    <option *ngFor="let d of districtList" [value]="d.id">
+                        {{userLang=='hi'?d.hindi:d.english}}</option>
+                </select>
+            </mat-form-field>
+        </p>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label> {{'advanceForm.SR_Location' | translate}} :</mat-label>
+                <select matNativeControl [placeholder]="'Select'" name="SRLocation">
+                    <option value="Select">Select</option>
+                </select>
+            </mat-form-field>
+        </p>
+    </div>
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label> {{'advanceForm.Registration_District' | translate}} :</mat-label>
+                <select matNativeControl [placeholder]="'Select'" name="registrationDistrict">
+                    <option value="Select">Select</option>
+                </select>
+            </mat-form-field>
+        </p>
+    </div>
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'advanceForm.Select_Tehsil' | translate}} :</mat-label>
+                <select matNativeControl [placeholder]="'Select'" [(ngModel)]="selectedTehsilId" name="tehsil">
+                    <option value="Select">Select</option>
+                    <option *ngFor="let tehsil of tehsilList" [value]="tehsil.id">
+                        {{userLang=='hi'?tehsil.hindi:tehsil.english}}</option>
+                </select>
+            </mat-form-field>
+        </p>
+    </div>
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'advanceForm.Select_Village' | translate}} :</mat-label>
+                <select matNativeControl [placeholder]="'Select'" [(ngModel)]="selectedVillageId" name="village">
+                    <option value="Select">Select</option>
+                    <option *ngFor="let village of villageList" [value]="village.id">
+                        {{userLang=='hi'?village.hindi:village.english}}</option>
+                </select>
+            </mat-form-field>
+        </p>
+    </div>
+</div> <!--  form row end -->
+
+
+<!-- Property Details -->
+<a class="m-2" data-bs-toggle="collapse" href="#propertyDetails" role="button" aria-expanded="false"
+    aria-controls="propertyDetails" (click)="propertyIcon=propertyIcon==faCaretRight?faCaretDown:faCaretRight">
+    <fa-icon [icon]="propertyIcon"></fa-icon> Property Details
+</a>
+<div class="collapse row " id="propertyDetails">
+
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'advanceForm.Select_Village' | translate}} :</mat-label>
+                <select matNativeControl [placeholder]="'Select'" [(ngModel)]="selectedVillageId" name="village11">
+                    <option value="Select">Select</option>
+                    <option *ngFor="let village of villageList" [value]="village.id">
+                        {{userLang=='hi'?village.hindi:village.english}}</option>
+                </select>
+            </mat-form-field>
+        </p>
+    </div>
+</div>
+
+<br>
+<!-- Deed Details -->
+<a class="m-2" data-bs-toggle="collapse" href="#deedDetails" role="button" aria-expanded="false"
+    aria-controls="deedDetails" (click)="deedIcon=deedIcon==faCaretRight?faCaretDown:faCaretRight">
+    <fa-icon [icon]="deedIcon"></fa-icon> Deed Details
+</a>
+<div class="collapse row" id="deedDetails">
+
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'advanceForm.Select_Village' | translate}} :</mat-label>
+                <select matNativeControl [placeholder]="'Select'" [(ngModel)]="selectedVillageId" name="village1111">
+                    <option value="Select">Select</option>
+                    <option *ngFor="let village of villageList" [value]="village.id">
+                        {{userLang=='hi'?village.hindi:village.english}}</option>
+                </select>
+            </mat-form-field>
+        </p>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12 text-center">
+        <button class="btn btn-primary" (click)="searchDeed()">Search</button>
+    </div>
+</div>

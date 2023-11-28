@@ -1,0 +1,33 @@
+<mat-tab-group>
+    <mat-tab label="Pending Complain">
+        <ng-template matTabContent>
+            <mat-card class="m-3" *ngFor="let complain of complainList">
+                <mat-card-subtitle>Date : {{complain.initDate}}</mat-card-subtitle>
+                <mat-card-title>{{complain.type}}</mat-card-title>
+                <mat-card-content>
+                    <p class="fw-bold">District : {{complain.district}}</p>
+                    <p class="fw-bold">Sub-District : {{complain.subDistrict}}</p>
+
+                    <p>{{complain.userComment}}</p>
+                    <span>Contact Info : {{complain.contactInfo}}</span>
+
+                </mat-card-content>
+                <mat-divider inset></mat-divider>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary">View Complain</button>
+                    <button mat-raised-button color="warn">Mark as Solved</button>
+
+                    <button *ngIf="complain.attachedScreenshots" mat-raised-button color="primary">View customer
+                        Screen-shots</button>
+                    <button *ngIf="complain.attachedFileId" mat-raised-button color="warn">View Document</button>
+                </mat-card-actions>
+            </mat-card>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Solved Complain">
+        <ng-template matTabContent>
+            <h1>second tabe</h1>
+        </ng-template>
+    </mat-tab>
+    <!-- <mat-tab label="Third"> Content 3 </mat-tab> -->
+</mat-tab-group>

@@ -1,0 +1,122 @@
+<div class="container mt-2">
+    <div class="main-body">
+        <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
+                                class="rounded-circle" width="150">
+                            <div class="mt-3">
+                                <h3>{{user?.username}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row" *ngIf="message">
+                            <div class="col-12 text-center">
+                                <div class="alert alert-danger" role="alert">
+                                    {{message}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h4 class="mb-0">Email:</h4>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                {{emailId}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h4 class="mb-0">Mobile:</h4>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                {{mobileNo}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h4 class="mb-0">Current Password:</h4>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Enter your current password</mat-label>
+                                    <input matInput type="password" [(ngModel)]="password" #passwordId name="password"
+                                        [readonly]="!passwordEditable">
+
+                                    <button mat-icon-button matSuffix
+                                        (click)="passwordId.type=passwordId.type=='password'?'text':'password'"
+                                        [attr.aria-label]="'Hide password'">
+                                        <mat-icon>{{passwordId.type=='password' ? 'visibility_off' :
+                                            'visibility'}}</mat-icon>
+                                    </button>
+                                </mat-form-field>
+
+                                <span style="cursor: pointer; font-weight: 900;" (click)="onChangePassword()">
+                                    <fa-icon [icon]="faEdit"></fa-icon>
+                                </span>
+                            </div>
+                        </div>
+
+                        <ng-container *ngIf="passwordEditable">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h4 class="mb-0">New Password:</h4>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Enter new password</mat-label>
+                                        <input matInput type="password" [(ngModel)]="newPassword" #newPasswordId
+                                            name="newPassword">
+                                        <button mat-icon-button matSuffix
+                                            (click)="newPasswordId.type=newPasswordId.type=='password'?'text':'password'"
+                                            [attr.aria-label]="'Hide password'">
+                                            <mat-icon>{{newPasswordId.type=='password' ? 'visibility_off' :
+                                                'visibility'}}</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h4 class="mb-0">Confirm Password:</h4>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Enter Confirm password</mat-label>
+                                        <input matInput type="password" [(ngModel)]="confirmPassword" #confirmPasswordId
+                                            name="confirmPassword" (keyup)="checkErrorMessage()">
+
+                                        <button mat-icon-button matSuffix
+                                            (click)="confirmPasswordId.type=confirmPasswordId.type=='password'?'text':'password'"
+                                            [attr.aria-label]="'Hide password'">
+                                            <mat-icon>{{confirmPasswordId.type=='password' ? 'visibility_off' :
+                                                'visibility'}}</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+                                    <span *ngIf="passwordWarnMsg" class="text-danger mx-2">{{passwordWarnMsg}}</span>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <button class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

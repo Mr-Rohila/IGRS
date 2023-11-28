@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <ng-container *ngIf="isLogin" class="card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8 d-none d-md-block">
+                        <p class="text-primary"> / <a *ngFor="let directory of urlDirectory"
+                                [routerLink]="directory.url">{{
+                                directory.name}} / </a> </p>
+                    </div>
+                    <div class="col">
+                        <span class="float-end bg-light d-flex pointer border-0 rounded-3 dropdown-toggle" id="profileContainer"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+
+                            <h3 class="fw-bold text-muted mx-2">{{user?.username}}</h3>
+                            <img class="rounded-circle" src="../../../../assets/images/user.jpg" width="25" height="25">
+                        </span>
+                        <ul class="dropdown-menu" aria-labelledby="profileContainer">
+                            <li><a class="dropdown-item" routerLink="/user/account"><fa-icon [icon]="faUser"></fa-icon>
+                                    Account</a></li>
+                            <li (click)="logout()" class="dropdown-item pointer"> <fa-icon [icon]="faSignOut"></fa-icon>
+                                Logout</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<div class="container">
+    <div class="row m-2">
+        <div class="col-12 card card-body">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

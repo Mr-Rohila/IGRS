@@ -1,0 +1,120 @@
+{
+    "common": {
+        "Select": "Select",
+        "Search": "Search"
+    },
+    "home": {
+        "title": "welcome to multi language support application"
+    },
+    "header": {
+        "title": "<b class='text-primary'>I</b>NSPECTOR <b class='text-primary'>G</b>ENERAL OF <b class='text-primary'>R</b>EGISTRATION AND SUPERINTENDENT OF <b class='text-primary'>S</b>TAMP<br>",
+        "SkipContent": "Skip to main content"
+    },
+    "navbar": {
+        "home": "Home"
+    },
+    "signup": {
+        "registerForm": "Register Form",
+        "mobileNo": "Mobile No.",
+        "mobileErrorMessage1": "Mobile No. is required",
+        "mobileErrorMessage2": "Invalid Mobile No.",
+        "email": "E-mail",
+        "emailErrorMessage1": "E-mail is required",
+        "emailErrorMessage2": "E-mail must be a valid email address",
+        "password": "Password",
+        "passwordErrorMessage1": "Password is required",
+        "passwordErrorMessage2": "Password must contain more than 8 characters, 1 upper-case letter, 1 lower-case letter, and 1 special character",
+        "confirmPassword": "Confirm Password",
+        "confirmPasswordErrorMessage1": "Confirm Password is required",
+        "confirmPasswordErrorMessage2": "Passwords must match",
+        "TsCs": "Accept Terms & Conditions",
+        "TsCsErrorMessage1": "Accept Ts & Cs is required",
+        "registerButtonLabel": "Register",
+        "resetButtonLabel": "Reset",
+        "sendOTPButtonLabel": "Send OTP"
+    },
+    "forgetPassword": {
+        "mailNotificationMessage": "Open your mailbox and check/open reset password link"
+    },
+    "createPassword": {
+        "password": "New Password",
+        "passwordErrorMessage1": "Password is required",
+        "passwordErrorMessage2": "Password must contain more than 8 characters, 1 upper-case letter, 1 lower-case letter, and 1 special character",
+        "confirmPassword": "Confirm New  Password",
+        "confirmPasswordErrorMessage1": "Confirm Password is required",
+        "confirmPasswordErrorMessage2": "Passwords must match",
+        "createButtonLabel": "Create",
+        "resetButtonLabel": "Reset",
+        "titleLabel": "Create New Password"
+    },
+    "searchDeed": {
+        "Select_Search_Type": "Select Search Type",
+        "By Owner Name": "By Owner Name",
+        "By Khasra No": "By Khasra No",
+        "By Registration Year": "By Registration Year",
+        "Advanced Search": "Advanced Search",
+        "Name_of_deed_owner": "Name of deed owner",
+        "Relative_Name": "Relative Name",
+        "Khasra_No": "Khasra No",
+        "Village_Name": "Village Name",
+        "Document_Type": "Document Type",
+        "Document_Report": "Document Report",
+        "Request_of_full_Report": "Request Full Deed Report"
+    },
+    "byOwnerName": {
+        "Select_District": "Select District",
+        "Select_Tehsil": "Select Tehsil",
+        "Select_Village": "Select Village",
+        "Registration_Year": "Registration Year"
+    },
+    "byKhasraNo": {
+        "Select_District": "Select District",
+        "Enter_Khasra": "Enter Khasra No"
+    },
+    "byRegistrationYear": {
+        "Select_District": "Select District",
+        "Registration_Year": "Registration Year"
+    },
+    "advanceForm": {
+        "Select_District": "Select District",
+        "SR_Location": "SR Location",
+        "Registration_District": "Registration District",
+        "Select_Tehsil": "Select Tehsil",
+        "Select_Village": "Select Village"
+    },
+    "query": {
+        "Search_Complaint": "Search Complaint",
+        "Raised_Complaint": "Raised Complaint"
+    },
+    "raisedQuery": {
+        "Raised_Complaint": "Raised Complaint",
+        "Select_Complaint_Type": "Select Complaint Type",
+        "Payment_Id": "Payment Id",
+        "Payment_Date": "Payment Date",
+        "Explanation": "Explanation",
+        "Submit": "Submit",
+        "Select_District": "Select District",
+        "Village_Name": "Village Name",
+        "Owner_Name": "Owner Name",
+        "Owner_Relative_Name": "Owner Relative Name",
+        "Other_Details_related_document": "Other Details related document",
+        "Please_provide_correct_details_of_the_relevant_document_which_will_assist_in_identification_of_your_document": "Please provide correct details of the relevant document which will assist in identification of your document",
+        "Select_Document": "Select Document",
+        "Mobile_No":"Mobile No",
+        "Address":"Address",
+        "Contact_Person_Name":"Contact Person Name",
+        "Father_Name":"Father Name",
+        "Description":"Description"
+        
+    },
+    "searchQuery": {
+        "Complaint_Information": "Complaint Information",
+        "Complaint_Id": "Complaint Id",
+        "Complaint_Status": "Complaint Status"
+    },
+    "searchComplaint": {
+       "Complaint_Id":"Complaint Id",
+       "Complaint_Type":"Complaint Type",
+       "Complaint_Status":"Complaint Status"
+    }
+}

@@ -1,0 +1,304 @@
+<div class="text-center">
+    <p class="h3 fw-bold">{{'raisedQuery.Raised_Complaint' | translate}}</p>
+</div>
+<form class="form-group m-3" name="raisedQueryForm">
+
+    <div class="col-12 text-center">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'raisedQuery.Select_Complaint_Type' | translate}}</mat-label>
+                <select matNativeControl [placeholder]="'Select'" name="queryType" [(ngModel)]="selectedQueryType"
+                    (change)="onQueryTypeChange($event)">
+                    <option value="Select"> {{'common.Select' | translate}}</option>
+                    <option *ngFor="let queryType of queryTypeResponseList" [value]="queryType.sno">
+                        {{queryType.english}}</option>
+                </select>
+            </mat-form-field>
+        </p>    
+    </div>
+    <!-- Payment Related -->
+    <div class="row" *ngIf="selectedQueryType=='1'">
+        <div class="col-12 col-md-6 col-lg-3">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>{{'raisedQuery.Payment_Id' | translate}}</mat-label>
+                    <input matInput placeholder="{{'raisedQuery.Payment_Id' | translate}}"  [(ngModel)]="paymentQuery.paymentId"
+                        name="paymentId">
+                </mat-form-field>
+            </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>{{'raisedQuery.Payment_Date' | translate}}</mat-label>
+                    <input matInput placeholder="{{'raisedQuery.Payment_Date' | translate}}" [(ngModel)]="paymentQuery.paymentDate" type="date"
+                    name="paymentDate">
+                </mat-form-field>
+            </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>{{'raisedQuery.Explanation' | translate}}</mat-label>
+                    <textarea matInput rows="3" [(ngModel)]="paymentQuery.explanation" name="explanation" placeholder="{{'raisedQuery.Explanation' | translate}}"></textarea>
+                </mat-form-field>
+            </p>
+        </div>
+
+
+       <!-- Contact Person Details  -->  
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>{{'raisedQuery.Mobile_No' | translate}}</mat-label>
+                <input matInput placeholder="{{'raisedQuery.Mobile_No' | translate}}" [required]="true"  [(ngModel)]="paymentQuery.mobileNumber" name="mobileNumber">
+            </mat-form-field>
+        </p>
+ </div>
+    
+    
+<div class="col-12 col-md-4 col-lg-3">
+    <p>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>{{'raisedQuery.Address' | translate}}</mat-label>
+            <input matInput placeholder="{{'raisedQuery.Address' | translate}}" [required]="false" name="address" [(ngModel)]="paymentQuery.address" name="address">
+        </mat-form-field>
+    </p>
+</div>
+
+<div class="col-12 col-md-4 col-lg-3">
+    <p>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>{{'raisedQuery.Contact_Person_Name' | translate}}</mat-label>
+            <input matInput placeholder="{{'raisedQuery.Contact_Person_Name' | translate}}" [required]="false" [(ngModel)]="paymentQuery.contactPersonName" name="contactPersonName">
+        </mat-form-field>
+    </p>
+</div>
+
+<div class="col-12 col-md-4 col-lg-3">
+    <p>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>{{'raisedQuery.Father_Name' | translate}}</mat-label>
+            <input matInput placeholder="{{'raisedQuery.Father_Name' | translate}}" [required]="false" [(ngModel)]="paymentQuery.fathername" name="fathername">
+        </mat-form-field>
+    </p>
+</div>
+     
+
+        <div class="col-12 text-center">
+            <button class="btn btn-primary" (click)="onPaymentRelatedSubmit()">{{'raisedQuery.Submit' |
+                translate}}</button>
+        </div>
+    </div>
+
+    <!-- document not found -->
+    <div class="row" *ngIf="selectedQueryType=='2'">
+        <div class="col-12 col-md-6 col-lg-3">
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{'raisedQuery.Select_District' | translate}}</mat-label>
+
+                    <select matNativeControl [placeholder]="'Select'" [(ngModel)]="doucmentNotFoundQuery.districtId" name="districtId"
+                        (change)="onDistrictChange()">
+                        <option value="Select"> {{'common.Select' | translate}}</option>
+                        <option *ngFor="let d of districtList" [value]="d.id">
+                            {{userLang=='hi'?d.hindi:d.english}}</option>
+                    </select>
+                </mat-form-field>
+            </p>
+
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{'raisedQuery.Village_Name' | translate}}</mat-label>
+					 <select matNativeControl [placeholder]="'Select'" [(ngModel)]="doucmentNotFoundQuery.villageId" name="villageId">
+                    <option value="Select"> {{'common.Select' | translate}}</option>
+                    <option *ngFor="let village of villageList" [value]="village.id">
+                        {{userLang=='hi'?village.hindi:village.english}}</option>
+                </select>
+                </mat-form-field>
+            </p>
+        </div>
+
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{'raisedQuery.Owner_Name' | translate}}</mat-label>
+                    <input matInput placeholder="{{'raisedQuery.Owner_Name' | translate}}"  [(ngModel)]="doucmentNotFoundQuery.ownerName" name="ownerName">
+                </mat-form-field>
+            </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{'raisedQuery.Owner_Relative_Name' | translate}}</mat-label>
+                    <input matInput placeholder="{{'raisedQuery.Owner_Relative_Name' | translate}}" [(ngModel)]="doucmentNotFoundQuery.ownerRelativeName" name="ownerRelativeName">
+                </mat-form-field>
+            </p>
+        </div>
+
+        <div class="col-12 col-md-8 col-lg-6">
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{'raisedQuery.Other_Details_related_document' | translate}}</mat-label>
+                    <textarea matInput placeholder="{{'raisedQuery.Other_Details_related_document' | translate}}" [(ngModel)]="doucmentNotFoundQuery.explanation" name="explanation"
+                        [rows]="'5'"></textarea>
+                    <mat-hint
+                        class="text-danger">*{{'raisedQuery.Please_provide_correct_details_of_the_relevant_document_which_will_assist_in_identification_of_your_document'
+                        | translate}}       </mat-hint>
+                </mat-form-field>
+            </p>
+        </div>
+       
+        <div class="col-12 col-md-4 col-lg-3">
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{'raisedQuery.Mobile_No' | translate}}</mat-label>
+                    <input matInput placeholder="{{'raisedQuery.Mobile_No' | translate}}" [required]="true"  [(ngModel)]="doucmentNotFoundQuery.mobileNumber" name="mobileNumber">
+                </mat-form-field>
+            </p>
+        </div>
+
+
+         
+    <!-- Contact Person Details  -->
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>{{'raisedQuery.Address' | translate}}</mat-label>
+                <input matInput placeholder="{{'raisedQuery.Address' | translate}}" [required]="false" name="address" [(ngModel)]="doucmentNotFoundQuery.address" name="address">
+            </mat-form-field>
+        </p>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>{{'raisedQuery.Contact_Person_Name' | translate}}</mat-label>
+                <input matInput placeholder="{{'raisedQuery.Contact_Person_Name' | translate}}" [required]="false" [(ngModel)]="doucmentNotFoundQuery.contactPersonName" name="contactPersonName">
+            </mat-form-field>
+        </p>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>{{'raisedQuery.Father_Name' | translate}}</mat-label>
+                <input matInput placeholder="{{'raisedQuery.Father_Name' | translate}}" [required]="false" [(ngModel)]="doucmentNotFoundQuery.fathername" name="fathername">
+            </mat-form-field>
+        </p>
+    </div>
+
+        <div class="col-12 text-center">
+            <button class="btn btn-primary" (click)="onDocumentNotFoundSubmit()">{{'raisedQuery.Submit' |
+                translate}}</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- details mismatch -->
+    <div class="row" *ngIf="selectedQueryType=='3'">
+        <div class="col-12 col-md-6 col-lg-3">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>{{'raisedQuery.Select_Document' | translate}}</mat-label>
+                    <select matNativeControl [placeholder]="'Select'" [(ngModel)]="detailMismatchQuery.documentId" name="documentId">
+                        <option value="Select">{{'common.Select' | translate}}</option>
+                        <option value="01234"> Ankush Kumar s/o Bijendra Singh</option>
+                        <option value="01235"> Vinay Kumar s/o Bijendra Singh</option>
+                        <option value="01236"> Kamal Kumar</option>
+                    </select>
+                </mat-form-field>
+            </p>
+        </div>
+        <!-- <div class="col-12 col-md-6 col-lg-3">
+
+            <mat-form-field appearance="outline" class="form-control">
+                <mat-label>Select all wrong field :</mat-label>
+                <select matNativeControl [placeholder]="'Select'" name="district" multiple>
+                    <option value="volumeNo">Volume No</option>
+                    <option value="documentNo">Document No</option>
+                    <option value="bookNo">Book No</option>
+                    <option value="dateOfRegistration">Date Of Registration</option>
+                    <option value="documentType">Type of Document</option>
+                    <option value="srLocation">Sr Location</option>
+                    <option value="tehsil">Tehsil</option>
+                    <option value="villageName">Village Name</option>
+                    <option value="wardNo">Ward/Halka No</option>
+                    <option value="khasraNo">Khasra No</option>
+                    <option value="firstPartyName">First Party Name</option>
+                    <option value="secondPartyName">Second Party Name</option>
+                </select>
+            </mat-form-field>
+        </div> -->
+        
+        <div class="col-12 col-md-6 col-lg-3">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>{{'raisedQuery.Explanation' | translate}} </mat-label>
+                    <textarea matInput placeholder="{{'raisedQuery.Explanation' | translate}}" [(ngModel)]="detailMismatchQuery.explanation" name="explanation"></textarea>
+                </mat-form-field>
+            </p>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>{{'raisedQuery.Description' | translate}}</mat-label>
+                    <textarea matInput placeholder="{{'raisedQuery.Description' | translate}}" [(ngModel)]="detailMismatchQuery.description" name="description"></textarea>
+                </mat-form-field>
+            </p>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+            <p>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{'raisedQuery.Mobile_No' | translate}}</mat-label>
+                    <input matInput placeholder="{{'raisedQuery.Mobile_No' | translate}}" [required]="true"  [(ngModel)]="detailMismatchQuery.mobileNumber" name="mobileNumber">
+                </mat-form-field>
+            </p>
+        </div>
+
+        <!-- Contact Person Details  -->
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>{{'raisedQuery.Address' | translate}}</mat-label>
+                <input matInput placeholder="{{'raisedQuery.Address' | translate}}" [required]="false" [(ngModel)]="detailMismatchQuery.address" name="address">
+            </mat-form-field>
+        </p>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>{{'raisedQuery.Contact_Person_Name' | translate}}</mat-label>
+                <input matInput placeholder="{{'raisedQuery.Contact_Person_Name' | translate}}" [required]="false" [(ngModel)]="detailMismatchQuery.contactPersonName" name="contactPersonName">
+            </mat-form-field>
+        </p>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-3">
+        <p>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>{{'raisedQuery.Father_Name' | translate}}</mat-label>
+                <input matInput placeholder="{{'raisedQuery.Father_Name' | translate}}" [required]="false" [(ngModel)]="detailMismatchQuery.fathername" name="fathername">
+            </mat-form-field>
+        </p>
+    </div>
+        <div class="col-12 text-center">
+            <button class="btn btn-primary" (click)="onDetailsMissmatchSubmit()">{{'raisedQuery.Submit' |
+                translate}}</button>
+        </div>
+    </div>
+
+   
+
+
+</form>
