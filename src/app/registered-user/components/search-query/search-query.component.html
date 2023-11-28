@@ -2,18 +2,6 @@
     <p class="h3 fw-bold">{{'searchQuery.Complaint_Information' | translate}}</p>
 </div>
 
-<div class="m-3">
-    <form class="form-group" name="searchQueryForm" (ngSubmit)="onSubmit()" #searchQueryForm="ngForm">
-        <p>
-            <mat-form-field appearance="outline">
-                <mat-label>{{'searchQuery.Complaint_Id' | translate}}</mat-label>
-                <input matInput required="true" [(ngModel)]="queryId" name="queryId">
-            </mat-form-field>
-        </p>
-        <input type="submit" value="Search" class="btn btn-primary">
-    </form>
-</div>
-
 <div class="table-responsive">
     <table class="table">
         <thead>
@@ -73,27 +61,27 @@
             <tbody>
                 <tr>
                     <td>Complaint Id</td>
-                    <td>{{queryResponse.id}}</td>
+                    <td>{{selectedQuery.id}}</td>
                 </tr>
                 <tr>
                     <td>Complaint Type</td>
-                    <td>{{queryResponse.type}}</td>
+                    <td>{{selectedQuery.type}}</td>
                 </tr>
                 <tr>
                     <td>Initial date</td>
-                    <td>{{queryResponse.initDate}}</td>
+                    <td>{{selectedQuery.initDate}}</td>
                 </tr>
                 <tr>
                     <td>Last update date</td>
-                    <td>{{queryResponse.updateDate}}</td>
+                    <td>{{selectedQuery.updateDate}}</td>
                 </tr>
                 <tr>
                     <td>Current Status</td>
-                    <td scope="col" class="text-danger fw-bold">{{queryResponse.ststus}}</td>
+                    <td scope="col" class="text-danger fw-bold">{{selectedQuery.ststus}}</td>
                 </tr>
                 <tr>
                     <td>Comment</td>
-                    <td>{{queryResponse.comment}}</td>
+                    <td>{{selectedQuery.comment}}</td>
                 </tr>
             </tbody>
         </table>

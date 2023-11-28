@@ -54,7 +54,10 @@ let API_URls =
         SAVE_PAYMENT_REFUND_REQUEST:'/queryd/payIssue',
         SAVE_DOCUMENT_NOT_FOUND_REQUEST:'/queryd/docNotFound',
         SAVE_DETAIL_MISMATCH_REQUEST:'/queryd/deedMismatch'
-    }
+    },
+    SEARCH_QUERY: {
+        GET_ALL_QUERIES: "/queryd/getAll"
+    },
 
 }
 

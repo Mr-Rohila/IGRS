@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchQueryService } from '../../services/search-query.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-search-query',
@@ -7,23 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchQueryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _searchQueryService: SearchQueryService) { }
 
-  queryId = "";
-  queryResponse = {
-    "id": "QRA140920230001",
-    "type": "Payment Refund",
-    "initDate": '12-07-2023',
-    "updateDate": '18-07-2023',
-    "ststus": "Solved",
-    "comment": "Query solved and refund ininitiated from our side. Please wait 3 days for refund",
-  };
-
+  queryResponse: any = [];
+  selectedQuery: any;
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    alert(this.queryId);
-    return false;
+  loadQuery() {
+    this._searchQueryService.getAllQueries().subscribe({
+      next: (res: any) => {
+        this.queryResponse = res;
+      },
+      error: (err) => {
+        console.log(err);
+        Swal.fire('Faield', 'Something wrong, try after some time', 'error');
+      }
+    })
   }
 }
