@@ -28,7 +28,7 @@
         "email": "neel2@gmail.com",
         "password": "1234",
         "roles": [
-            "QCUser"
+            "QCUSER"
         ]
     }
 ]

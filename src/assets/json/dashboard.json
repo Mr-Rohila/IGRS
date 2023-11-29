@@ -65,7 +65,7 @@
         "url": "/user/admin/query",
         "isActive": true,
         "roles": [
-            "QCUser"
+            "QCUSER"
         ]
     }
 ]
