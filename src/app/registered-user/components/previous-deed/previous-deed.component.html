@@ -1,8 +1,13 @@
 <div class="row">
+    <div class="col-12 text-center">
+        <p class="h3 fw-bold">{{'previousDeed.list_of_previous_request' | translate}}</p>
+    </div>
+</div>
+<div class="row">
     <div class="col-12">
         <div class="table-responsive">
             <table class="table caption-top">
-                <caption>List of previous request</caption>
+                <caption></caption>
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -25,7 +30,7 @@
                         <td>IGRS-017847</td>
                         <td>12-07-2023</td>
                         <td>Pending</td>
-                        <td> <a href="#"> Verify Payment</a></td>
+                        <td> <a (click)="verifyPayment()"> Verify Payment</a></td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>

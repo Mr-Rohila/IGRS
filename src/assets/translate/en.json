@@ -100,12 +100,11 @@
         "Other_Details_related_document": "Other Details related document",
         "Please_provide_correct_details_of_the_relevant_document_which_will_assist_in_identification_of_your_document": "Please provide correct details of the relevant document which will assist in identification of your document",
         "Select_Document": "Select Document",
-        "Mobile_No":"Mobile No",
-        "Address":"Address",
-        "Contact_Person_Name":"Contact Person Name",
-        "Father_Name":"Father Name",
-        "Description":"Description"
-        
+        "Mobile_No": "Mobile No",
+        "Address": "Address",
+        "Contact_Person_Name": "Contact Person Name",
+        "Father_Name": "Father Name",
+        "Description": "Description"
     },
     "searchQuery": {
         "Complaint_Information": "Complaint Information",
@@ -113,8 +112,11 @@
         "Complaint_Status": "Complaint Status"
     },
     "searchComplaint": {
-       "Complaint_Id":"Complaint Id",
-       "Complaint_Type":"Complaint Type",
-       "Complaint_Status":"Complaint Status"
+        "Complaint_Id": "Complaint Id",
+        "Complaint_Type": "Complaint Type",
+        "Complaint_Status": "Complaint Status"
+    },
+    "previousDeed": {
+        "list_of_previous_request": "List of Previous Deed Request"
     }
 }
