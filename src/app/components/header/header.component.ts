@@ -31,7 +31,6 @@ export class HeaderComponent implements OnInit {
 
   chnageLang(event: any) {
     this.translateService.use(event.value);
-    debugger
     this.localStorage.setDefaultLanguage(event.value);
     //reload window for change language in UI
     window.location.reload();
